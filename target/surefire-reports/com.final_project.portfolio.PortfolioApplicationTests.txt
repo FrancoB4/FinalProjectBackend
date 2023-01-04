@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.final_project.portfolio.PortfolioApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.4 s - in com.final_project.portfolio.PortfolioApplicationTests

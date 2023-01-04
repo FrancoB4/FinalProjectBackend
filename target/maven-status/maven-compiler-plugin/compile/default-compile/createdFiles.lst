@@ -1,0 +1,9 @@
+com\final_project\portfolio\model\Certification.class
+com\final_project\portfolio\repository\ProjectRepository.class
+com\final_project\portfolio\service\certification\CertificationService.class
+com\final_project\portfolio\repository\CertificationRepository.class
+com\final_project\portfolio\service\certification\ICertificationService.class
+com\final_project\portfolio\service\project\ProjectService.class
+com\final_project\portfolio\service\project\IProjectService.class
+com\final_project\portfolio\PortfolioApplication.class
+com\final_project\portfolio\model\Project.class
