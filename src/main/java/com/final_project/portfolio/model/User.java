@@ -9,10 +9,9 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class Project {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long id;
-
-    private String name, description, url, image;
+    private String username, password;
+    private long id;
 }
