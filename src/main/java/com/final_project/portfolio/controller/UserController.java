@@ -14,23 +14,23 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
-    @GetMapping("/projects")
+    @GetMapping("/users")
     public List<User> getProjects() {
         return userService.getUsers();
     }
 
-    @GetMapping("/projects/{id}")
+    @GetMapping("/users/{id}")
     public User getProject(@PathVariable Long id) {
         return userService.getUser(id);
     }
 
-    @PostMapping("/projects/create")
+    @PostMapping("/users/create")
     public String saveProject(User user) {
         userService.saveUser(user);
         return "Project correctly created";
     }
 
-    @DeleteMapping("/projects/{id}")
+    @DeleteMapping("/users/{id}")
     public String deleteProject(@PathVariable Long id) {
         userService.deleteUser(id);
         return "Project correctly deleted";

@@ -13,23 +13,23 @@ public class CertificationControler {
     @Autowired
     private ICertificationService certificationService;
 
-    @GetMapping("/projects")
+    @GetMapping("/certifications")
     public List<Certification> getProjects() {
         return certificationService.getProjects();
     }
 
-    @GetMapping("/projects/{id}")
+    @GetMapping("/certifications/{id}")
     public Certification getProject(@PathVariable Long id) {
         return certificationService.getProject(id);
     }
 
-    @PostMapping("/projects/create")
+    @PostMapping("/certifications/create")
     public String saveProject(Certification certification) {
         certificationService.saveProject(certification);
         return "Project correctly created";
     }
 
-    @DeleteMapping("/projects/{id}")
+    @DeleteMapping("/certifications/{id}")
     public String deleteProject(@PathVariable Long id) {
         certificationService.deleteProject(id);
         return "Project correctly deleted";
