@@ -15,7 +15,7 @@ public class CompetenceController {
     @GetMapping("/competences")
     public List<Competence> getCompetences() { return competenceService.getCompetences(); }
 
-    @GetMapping("/competence/{id}")
+    @GetMapping("/competences/{id}")
     public Competence getCompetence(@PathVariable Long id) { return competenceService.getCompetence(id); }
 
     @PostMapping("/competences/create")
