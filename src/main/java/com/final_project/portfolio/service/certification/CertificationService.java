@@ -14,21 +14,17 @@ public class CertificationService implements ICertificationService {
 
     @Override
     public List<Certification> getProjects() {
-        return null;
+        return certificationRepository.findAll();
     }
 
     @Override
-    public void saveProject(Certification project) {
-
-    }
+    public void saveProject(Certification certification) { certificationRepository.save(certification); }
 
     @Override
-    public void deleteProject(Long id) {
-
-    }
+    public void deleteProject(Long id) { certificationRepository.deleteById(id); }
 
     @Override
     public Certification getProject(Long id) {
-        return null;
+        return certificationRepository.findById(id).orElse(null);
     }
 }

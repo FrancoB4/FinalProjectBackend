@@ -12,10 +12,7 @@ public class ProjectService implements IProjectService {
     private ProjectRepository projectRepository;
 
     @Override
-    public List<Project> getProjects() {
-        List<Project> projects = projectRepository.findAll();
-        return projects;
-    }
+    public List<Project> getProjects() { return projectRepository.findAll(); }
 
     @Override
     public void saveProject(Project project) {
