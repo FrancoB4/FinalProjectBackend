@@ -29,4 +29,23 @@ public class StudyController {
         studyService.deleteStudy(id);
         return "Study correctly deleted";
     }
+
+    @PutMapping("/studies/edit/{id}")
+    public String editUser(@PathVariable Long id,
+                           @RequestParam ("institution") String institution,
+                           @RequestParam ("description") String description,
+                           @RequestParam ("date") String date,
+                           @RequestParam ("state") String state) {
+
+        Study study = studyService.getStudy(id);
+
+        study.setInstitution(institution);
+        study.setDescription(description);
+        study.setStartDate(date);
+        study.setState(state);
+
+        studyService.saveStudy(study);
+
+        return "Study correctly created";
+    }
 }

@@ -23,7 +23,7 @@ public class ProjectController {
     }
 
     @PostMapping("/projects/create")
-    public String saveProject(Project project) {
+    public String saveProject(@RequestBody Project project) {
         projectService.saveProject(project);
         return "Project correctly created";
     }
@@ -32,5 +32,22 @@ public class ProjectController {
     public String deleteProject(@PathVariable Long id) {
         projectService.deleteProject(id);
         return "Project correctly deleted";
+    }
+
+    @PutMapping("/projects/edit/{id}")
+    public String updateProject(@PathVariable Long id,
+                                @RequestParam ("name") String newName,
+                                @RequestParam ("description") String newDescription,
+                                @RequestParam ("url") String newUrl,
+                                @RequestParam ("image") String newImage) {
+        Project project = projectService.getProject(id);
+
+        project.setName(newName);
+        project.setDescription(newDescription);
+        project.setUrl(newUrl);
+        project.setImage(newImage);
+
+        projectService.saveProject(project);
+        return "Project correctly updated";
     }
 }

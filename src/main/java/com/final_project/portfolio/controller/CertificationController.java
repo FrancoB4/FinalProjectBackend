@@ -34,4 +34,18 @@ public class CertificationController {
         certificationService.deleteProject(id);
         return "Project correctly deleted";
     }
+
+    @PutMapping("/certifications/edit/{id}")
+    public String updateCertification(@PathVariable Long id,
+                                      @RequestParam ("url") String newUrl,
+                                      @RequestParam ("image") String newImage) {
+
+        Certification certification = certificationService.getProject(id);
+
+        certification.setUrl(newUrl);
+        certification.setImage(newImage);
+
+        certificationService.saveProject(certification);
+        return "Certification correctly updated";
+    }
 }

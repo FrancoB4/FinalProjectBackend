@@ -29,4 +29,18 @@ public class CompetenceController {
         competenceService.deleteCompetence(id);
         return "Competence correctly deleted";
     }
+
+    @PutMapping("/competences/edit/{id}")
+    public String updateCompetence(@PathVariable Long id,
+                                   @RequestParam ("name") String newName,
+                                   @RequestParam ("level") int newLevel) {
+
+        Competence competence = competenceService.getCompetence(id);
+
+        competence.setName(newName);
+        competence.setLevel(newLevel);
+
+        competenceService.saveCompetence(competence);
+        return "Competence correctly updated";
+    }
 }
