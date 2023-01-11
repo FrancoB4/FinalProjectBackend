@@ -12,25 +12,25 @@ public class StudyController {
     @Autowired
     private IStudyService studyService;
 
-    @GetMapping("/studies")
+    @GetMapping("/study")
     public List<Study> getStudies() { return studyService.getStudies(); }
 
-    @GetMapping("/studies/{id}")
+    @GetMapping("/study/{id}")
     public Study getStudy(@PathVariable Long id) { return studyService.getStudy(id); }
 
-    @PostMapping("/studies/create")
-    public String createStudy(Study study) {
+    @PostMapping("/study/create")
+    public String createStudy(@RequestBody Study study) {
         studyService.saveStudy(study);
         return "Study correctly created";
     }
 
-    @DeleteMapping("/studies/{id}")
+    @DeleteMapping("/study/{id}")
     public String deleteStudy(@PathVariable Long id) {
         studyService.deleteStudy(id);
         return "Study correctly deleted";
     }
 
-    @PutMapping("/studies/edit/{id}")
+    @PutMapping("/study/edit/{id}")
     public String editUser(@PathVariable Long id,
                            @RequestParam ("institution") String institution,
                            @RequestParam ("description") String description,

@@ -19,7 +19,7 @@ public class CompetenceController {
     public Competence getCompetence(@PathVariable Long id) { return competenceService.getCompetence(id); }
 
     @PostMapping("/competences/create")
-    public String createCompetence(Competence competence) {
+    public String createCompetence(@RequestBody Competence competence) {
         competenceService.saveCompetence(competence);
         return "Competence correctly created";
     }

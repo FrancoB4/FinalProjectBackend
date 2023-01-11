@@ -24,7 +24,7 @@ public class CertificationController {
     }
 
     @PostMapping("/certifications/create")
-    public String saveProject(Certification certification) {
+    public String saveProject(@RequestBody Certification certification) {
         certificationService.saveProject(certification);
         return "Project correctly created";
     }
