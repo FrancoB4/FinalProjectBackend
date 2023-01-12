@@ -36,16 +36,13 @@ public class ProjectController {
 
     @PutMapping("/projects/{id}")
     public String updateProject(@PathVariable Long id,
-                                @RequestParam ("name") String newName,
-                                @RequestParam ("description") String newDescription,
-                                @RequestParam ("url") String newUrl,
-                                @RequestParam ("image") String newImage) {
+                                @RequestBody Project newProject) {
         Project project = projectService.getProject(id);
 
-        project.setName(newName);
-        project.setDescription(newDescription);
-        project.setUrl(newUrl);
-        project.setImage(newImage);
+        project.setName(newProject.getName());
+        project.setDescription(newProject.getDescription());
+        project.setUrl(newProject.getUrl());
+        project.setImage(newProject.getImage());
 
         projectService.saveProject(project);
         return "Project correctly updated";
