@@ -8,6 +8,7 @@ import com.final_project.portfolio.service.competence.ICompetenceService;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class CompetenceController {
     @Autowired
     private ICompetenceService competenceService;

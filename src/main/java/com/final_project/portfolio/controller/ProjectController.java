@@ -8,6 +8,7 @@ import com.final_project.portfolio.service.project.IProjectService;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class ProjectController {
     @Autowired
     private IProjectService projectService;
