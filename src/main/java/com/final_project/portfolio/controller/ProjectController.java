@@ -34,7 +34,7 @@ public class ProjectController {
         return "Project correctly deleted";
     }
 
-    @PutMapping("/projects/edit/{id}")
+    @PutMapping("/projects/{id}")
     public String updateProject(@PathVariable Long id,
                                 @RequestParam ("name") String newName,
                                 @RequestParam ("description") String newDescription,
