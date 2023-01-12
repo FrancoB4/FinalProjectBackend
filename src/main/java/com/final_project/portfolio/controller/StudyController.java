@@ -31,7 +31,7 @@ public class StudyController {
         return "Study correctly deleted";
     }
 
-    @PutMapping("/study/edit/{id}")
+    @PutMapping("/study/{id}")
     public String editUser(@PathVariable Long id,
                            @RequestParam ("institution") String institution,
                            @RequestParam ("description") String description,

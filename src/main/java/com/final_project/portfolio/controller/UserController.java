@@ -35,7 +35,7 @@ public class UserController {
         return "Project correctly deleted";
     }
 
-    @PutMapping("/users/edit/{id}")
+    @PutMapping("/users/{id}")
     public String editUser(@PathVariable Long id,
                          @RequestParam ("username") String newUsername,
                          @RequestParam ("password") String newPassword) {

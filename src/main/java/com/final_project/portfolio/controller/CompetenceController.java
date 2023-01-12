@@ -31,7 +31,7 @@ public class CompetenceController {
         return "Competence correctly deleted";
     }
 
-    @PutMapping("/competences/edit/{id}")
+    @PutMapping("/competences/{id}")
     public String updateCompetence(@PathVariable Long id,
                                    @RequestParam ("name") String newName,
                                    @RequestParam ("level") int newLevel) {

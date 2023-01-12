@@ -36,7 +36,7 @@ public class CertificationController {
         return "Project correctly deleted";
     }
 
-    @PutMapping("/certifications/edit/{id}")
+    @PutMapping("/certifications/{id}")
     public String updateCertification(@PathVariable Long id,
                                       @RequestParam ("url") String newUrl,
                                       @RequestParam ("image") String newImage) {
