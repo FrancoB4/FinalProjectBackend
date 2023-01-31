@@ -2,12 +2,14 @@ package com.final_project.portfolio.service.study;
 
 import com.final_project.portfolio.model.Study;
 import com.final_project.portfolio.repository.StudyRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class StudyService implements IStudyService {
+    @Autowired
     StudyRepository studyRepository;
 
     @Override
